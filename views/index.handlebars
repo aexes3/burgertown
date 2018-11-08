@@ -1,21 +1,21 @@
-<h1>Cats!</h1>
+<h1>Deez Burgers</h1>
 
-<h2>Cats that are not sleepy!</h2>
+<h2>Deez burger got no nuts!</h2>
 
 <ul>
   {{#each foods}}
   {{#unless devoured}}
-  {{> burgers/burger-block ingest=true}}
+  {{!-- {{> burgers/burger-block ingest=true}} --}}
   {{/unless}}
   {{/each}}
 </ul>
 
-<h2>Cats that are sleepy!</h2>
+<h2>Deez Burger are here</h2>
 
 <ul>
   {{#each foods}}
   {{#if devoured}}
-  {{> burgers/burger-block ingest=false}}
+  {{!-- {{> burgers/burger-block ingest=false}} --}}
   {{/if}}
   {{/each}}
 </ul>
@@ -24,15 +24,25 @@
 <form class="create-form">
 
   <div class="form-group">
-    <label for="newTaste">Cat Name:</label>
-    <input type="text" id="ca" name="name">
+    <label for="newTaste">Burger Combo:</label>
+    <input type="text" id="newTaste" name="name">
   </div>
 
+
+<div><li>
+    {{name}}
+
+    <button class="btn btn-sm change-consumed" id="change-consumed" data-id="{{id}}" data-newconsumed="{{consumed}}">
+        {{#if consumed}} Move{{else}} Move{{/if}}
+    </button>
+
+    
+</li></div>
   <div class="form-group">
     <label for="devoured">devoured?</label><br>
     <input type="radio" name="devoured" value="1" checked> devoured!<br>
     <input type="radio" name="devoured" value="0"> Awake
   </div>
 
-  <button type="submit">Add Cat</button>
+  <button type="submit">Add Burger</button>
 </form>
