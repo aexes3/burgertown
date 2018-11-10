@@ -1,0 +1,58 @@
+body {
+    background-image: url("../img/agriculture-animal-animal-photography-231062.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Playfair Display', serif;
+}
+.jumbotron.statement{
+    background-color: rgba(0, 0, 0, 0.33);
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-right: 7%;
+    padding-left: 7%;
+    margin-top: 2%;
+    margin-left: 55%;
+    margin-right: 0%;
+    text-align: right;
+    align-content: right;
+    color: white;
+}
+.jumbotron{
+    background-color: rgba(0, 0, 0, 0.33);
+    border: transparent;
+    text-align: center;
+    color: white;
+    padding-top: 4%;
+    padding-bottom: 2%;
+    text-align: center;
+    align-content: center;
+}
+.card{
+    background-color: rgba(211, 211, 211, 0.75);
+    border: transparent;
+}
+
+.form-group{
+    padding: .5%;
+    margin: .5%;
+}
+.rad {
+    margin: 1%;
+}
+ul {
+    list-style-type: none;
+}
+.btn {
+    margin: 0.5%;
+    background-color: rgba(214, 93, 22, 0.33);
+  }
+#clickhere {
+    background-color: rgba(214, 93, 22, 0.33);
+    margin-bottom: 1%;
+    padding: .25%;
+}
+h2{
+    color: rgba(63, 43, 20, 0.795);
+}

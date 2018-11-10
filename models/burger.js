@@ -1,7 +1,7 @@
 //models.burger = DB CRUD
 var orm = require('../config/orm.js');
 
-var food = {
+var burger = {
   all: function(cb) {
     orm.all("burgers", function(res) {
       cb(res);
@@ -25,4 +25,4 @@ var food = {
   }
 };
 
-module.exports = food;
+module.exports = burger;

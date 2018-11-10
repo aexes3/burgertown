@@ -1,48 +1,67 @@
-<h1>Deez Burgers</h1>
+<div id="container">
+  <div class="jumbotron statement" id="title">
+    <h1>What's In Your Burger?</h1><br>
+    <h5>When Is The Last Time You Got What You Wanted?
+        Now Is Your Chance To Choose The Perfect Burger.
+        High Quality, Healthy, Delicious, and Local!<h5>
+  </div>
+</div>
 
-<h2>Deez burger got no nuts!</h2>
-
-<ul>
-  {{#each foods}}
-  {{#unless devoured}}
-  {{!-- {{> burgers/burger-block ingest=true}} --}}
-  {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Deez Burger are here</h2>
-
-<ul>
-  {{#each foods}}
-  {{#if devoured}}
-  {{!-- {{> burgers/burger-block ingest=false}} --}}
-  {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="newTaste">Burger Combo:</label>
-    <input type="text" id="newTaste" name="name">
+<div class="jumbotron" id="option">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        {{!-- where the customers burgers go --}}
+        <h2>At <i>Your</i> Pleasure!</h2>
+          <ul>
+            {{#each burgers}}
+            {{#unless this.devoured}}
+            {{> burgers/burger-block ingest=true}}
+            {{/unless}}
+            {{/each}}
+          </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        {{!-- Where the house burgers are --}}
+        <h2>The Pleasure Is All <i>Ours</i>!</h2>
+          <ul>
+            {{#each burgers}}
+            {{#if this.devoured}}
+            {{> burgers/burger-block ingest=false}}
+            {{/if}}
+            {{/each}}
+          </ul>
+      </div>
+    </div>
+  </div>
+  {{!-- Adding burgers to the list --}}
+  <div class="card">
+    <form class="create-form">
+      <div class="form-group">
+        {{!-- input form --}}
+        <label for="newTaste">Want Your Own?</label>
+        <input type="text" id="newTaste" name="name">
+      </div>
+      <div>
+        {{!-- <li>
+          {{name}}
+          <button class="btn btn-sm change-ingest" id="change-ingest" data-id="{{id}}" data-newingest="{{ingest}}">
+            {{#if ingest}} Move{{else}} Move{{/if}}
+          </button>
+        </li> --}}
+      </div>
+      <div class="form-group">
+        <label for="devoured">Where's your suggestion going?</label>
+        <input class="rad" type="radio" name="devoured" value="0"checked>Yours
+        <input class="rad" type="radio" name="devoured" value="1">Ours
+      </div>
+      <button id="clickhere" type="submit">Burger Submission</button>
+    </form>
+  </div>
   </div>
 
 
-<div><li>
-    {{name}}
 
-    <button class="btn btn-sm change-consumed" id="change-consumed" data-id="{{id}}" data-newconsumed="{{consumed}}">
-        {{#if consumed}} Move{{else}} Move{{/if}}
-    </button>
 
-    
-</li></div>
-  <div class="form-group">
-    <label for="devoured">devoured?</label><br>
-    <input type="radio" name="devoured" value="1" checked> devoured!<br>
-    <input type="radio" name="devoured" value="0"> Awake
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>

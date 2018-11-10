@@ -3,17 +3,15 @@ var connection = require("../config/connection.js");
 
 function printQuestionMarks(num) {
   var arr = [];
-
   for (var i = 0; i < num; i++) {
     arr.push("?");
   }
-
   return arr.toString();
 }
 
 function objToSql(ob) {
   var arr = [];
-
+   // Push the key/value as a string to array
   for (var key in ob) {
     var value = ob[key];
     if (Object.hasOwnProperty.call(ob, key)) {
@@ -38,13 +36,14 @@ var orm = {
     });
   },
   create: function(table, cols, vals, cb) {
+    console.log(cols);
     var queryString = "INSERT INTO " + table;
 
     queryString += " (";
-    queryString += cols.toString();
+    queryString += cols.join(', ')
     queryString += ") ";
     queryString += "VALUES (";
-    queryString += printQuestionMarks(vals.length);
+    queryString += vals.map(v=>isNaN(v) ? `"${v}"`: v).join(', ')
     queryString += ") ";
 
     console.log(queryString);
